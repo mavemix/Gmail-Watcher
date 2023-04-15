@@ -1,0 +1,23 @@
+{
+    "name": "andres/telefonica",
+    "type": "project",
+    "require": {
+        "google/apiclient": "^2.12.1"
+    },
+    "scripts": {
+        "pre-autoload-dump": "Google\\Task\\Composer::cleanup"
+    },
+    "config": { "process-timeout":0 },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Andres\\Telefonica\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mavmix"
+        }
+    ],
+    "minimum-stability": "stable"
+}
