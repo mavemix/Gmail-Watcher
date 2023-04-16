@@ -2,6 +2,8 @@
 
 namespace Andres\Telefonica;
 
+use Google\Service\Gmail\Message;
+
 require_once '../vendor/autoload.php';
 
 session_start();
@@ -67,14 +69,23 @@ if(isset($authUrl)) {
   echo "<a href='".$redirect_uri."?logout=true'>Salir</a><br><br>";
 
   $service = new \Google\Service\Gmail($client);
+  $allMessages = [];
 
   try{
 
     // Get the especific messages
     $user = 'me';
-    $results = $service->users_messages->listUsersMessages($user,[]);
+    
+    // First page of results
+    $results = $service->users_messages->listUsersMessages($user,['q' => 'from:no-reply@accounts.google.com']);
+    $allMessages = $results->getMessages();
 
-    foreach($results->messages as $message) {
+    while($results->nextPageToken) {
+      $results = $service->users_messages->listUsersMessages($user,['q' => 'from:no-reply@accounts.google.com', 'pageToken' => $results->nextPageToken]);
+      $allMessages = array_merge($allMessages, $results->getMessages());
+    }
+
+    foreach($allMessages as $message) {
       echo "ID: ".$message->id."<br>Thread: ".$message->threadId."<hr>";
     }
     
