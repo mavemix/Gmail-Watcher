@@ -15,8 +15,8 @@ class GmailAuth
      * Config parameters to construct the client to access services:
      *  CREDENTIALS_FILE: Google secret file obtained from credentials making
      *  REDIRECT_URI: On auth responses, this uri will be called by google with auth code obtained by GET 
-     *  SCOPES: permissions
-     *  ACCESS_TYPE: 
+     *  SCOPES: permissions (see Google)
+     *  ACCESS_TYPE: 'online' / 'offline' Indicates if application can refresh access tokens when the user is not present at the browser
      *  TOKEN_FILE: where auth token will be saved & recovered in local storage
      */
     const CONFIG = [
