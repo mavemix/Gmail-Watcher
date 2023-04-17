@@ -23,6 +23,6 @@ Any application that uses OAuth 2.0 to access Google APIs must have authorizatio
 
     We recommend that you design your app's auth endpoints so that your application does not expose authorization codes to other resources on the page.
 
-After creating your credentials, download from the API Console the credentials file & rename it to **credentials.json**. Securely store the file in the parent folder of the application (the file must be accessed & readable).
+After creating your credentials, download from the API Console the credentials file & rename it to **credentials.json**. Securely store the file in the parent folder of the application (the file must be accessed & readable). You can also host this file in a different location, as long as you update in the GmailAuth class the constant: CONFIG['CREDENTIALS_FILE'] with the correct path.
 
 > **Important:** Do not store the **credentials.json** file in a publicly-accessible location. In addition, if you share the source code to your application—for example, on GitHub—store the **credentials.json** file outside of your source tree to avoid inadvertently sharing your client credentials.
