@@ -2,7 +2,7 @@
 
 declare( strict_types = 1 );
 
-namespace Andres\Telefonica;
+namespace mavmix\gmailwatcher;
 use \Google\Client;
 
 /**

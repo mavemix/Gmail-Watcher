@@ -1,5 +1,5 @@
 {
-    "name": "andres/telefonica",
+    "name": "mavmix/gmailwatcher",
     "type": "project",
     "require": {
         "google/apiclient": "^2.12.1"
@@ -11,7 +11,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Andres\\Telefonica\\": "src/"
+            "mavmix\\gmailwatcher\\": "src/"
         }
     },
     "authors": [

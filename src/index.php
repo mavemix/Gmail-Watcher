@@ -1,6 +1,6 @@
 <?php 
 
-namespace Andres\Telefonica;
+namespace mavmix\gmailwatcher;
 
 require_once '../vendor/autoload.php';
 
